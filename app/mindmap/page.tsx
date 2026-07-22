@@ -1,10 +1,19 @@
-import Placeholder from "@/components/Placeholder";
+import { listDecks } from "@/lib/repo/decks";
+import MindmapView from "@/components/mindmap/MindmapView";
+
+export const dynamic = "force-dynamic";
 
 export default function MindmapPage() {
+  const decks = listDecks();
   return (
-    <Placeholder
-      title="마인드맵"
-      description="카드/개념을 트리 구조의 마인드맵으로 시각화합니다."
-    />
+    <div className="mx-auto max-w-6xl">
+      <h1 className="text-2xl font-bold">마인드맵</h1>
+      <p className="mt-1 opacity-60">
+        카드를 트리 구조로 연결해 개념 간 관계를 시각화하세요.
+      </p>
+      <div className="mt-6">
+        <MindmapView decks={decks} />
+      </div>
+    </div>
   );
 }
