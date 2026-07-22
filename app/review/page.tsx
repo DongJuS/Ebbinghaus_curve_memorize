@@ -1,10 +1,17 @@
-import Placeholder from "@/components/Placeholder";
+import ReviewSession from "@/components/review/ReviewSession";
+
+export const dynamic = "force-dynamic";
 
 export default function ReviewPage() {
   return (
-    <Placeholder
-      title="오늘의 복습"
-      description="망각곡선(SM-2 + 소수점 학습단계) 스케줄에 따라 오늘 복습할 카드를 학습합니다."
-    />
+    <div className="mx-auto max-w-xl">
+      <h1 className="text-2xl font-bold">오늘의 복습</h1>
+      <p className="mt-1 opacity-60">
+        망각곡선 스케줄에 따라 지금 복습할 카드입니다.
+      </p>
+      <div className="mt-6">
+        <ReviewSession />
+      </div>
+    </div>
   );
 }
