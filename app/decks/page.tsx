@@ -1,10 +1,17 @@
-import Placeholder from "@/components/Placeholder";
+import { listDecks } from "@/lib/repo/decks";
+import DecksClient from "@/components/decks/DecksClient";
+
+export const dynamic = "force-dynamic";
 
 export default function DecksPage() {
+  const decks = listDecks();
   return (
-    <Placeholder
-      title="덱 / 카드"
-      description="덱을 만들고 외울 카드(앞면/뒷면/메모)를 추가·수정·삭제합니다."
-    />
+    <div className="mx-auto max-w-4xl">
+      <h1 className="text-2xl font-bold">덱 / 카드</h1>
+      <p className="mt-1 opacity-60">덱을 만들고 외울 카드를 추가하세요.</p>
+      <div className="mt-6">
+        <DecksClient decks={decks} />
+      </div>
+    </div>
   );
 }
