@@ -1,6 +1,6 @@
 import { listDecks } from "@/lib/repo/decks";
 import { listExamSources } from "@/lib/repo/exams";
-import { isConfigured } from "@/lib/ai";
+import { isConfigured } from "@/lib/gemini";
 import ExamsClient from "@/components/exams/ExamsClient";
 
 export const dynamic = "force-dynamic";

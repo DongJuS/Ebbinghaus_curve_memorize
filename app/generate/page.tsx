@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { listDecks } from "@/lib/repo/decks";
-import { isConfigured } from "@/lib/ai";
+import { isConfigured } from "@/lib/gemini";
 import GenerateClient from "@/components/generate/GenerateClient";
 
 export const dynamic = "force-dynamic";
@@ -20,9 +20,9 @@ export default function GeneratePage() {
         <div className="mt-6 rounded-xl border border-dashed border-black/15 p-6 text-sm dark:border-white/20">
           AI 기능을 쓰려면 먼저{" "}
           <Link href="/settings" className="text-blue-600 underline">
-            설정에서 Anthropic API 키
+            설정에서 Gemini 로그인 상태
           </Link>
-          를 등록하세요.
+          를 확인하세요.
         </div>
       ) : (
         <div className="mt-6">
