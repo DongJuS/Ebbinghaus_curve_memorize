@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { generateQuestions, AiNotConfiguredError } from "@/lib/ai";
+import { generateQuestions, GeminiNotConfiguredError } from "@/lib/gemini";
 import { createQuestions } from "@/lib/repo/questions";
 import { getExamSource } from "@/lib/repo/exams";
 
@@ -35,9 +35,9 @@ export async function POST(req: Request) {
     );
     return NextResponse.json({ questions: saved });
   } catch (err) {
-    if (err instanceof AiNotConfiguredError) {
+    if (err instanceof GeminiNotConfiguredError) {
       return NextResponse.json(
-        { error: "설정에서 Anthropic API 키를 먼저 등록하세요." },
+        { error: "Gemini 로그인이 필요합니다. (서버에서 gemini-oauth-setup 실행)" },
         { status: 400 },
       );
     }
