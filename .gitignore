@@ -19,6 +19,9 @@
 *.db-shm
 *.db-wal
 
+# gemini oauth credentials (server-local secret)
+/data/google-oauth.json
+
 # env files
 .env
 .env*.local
