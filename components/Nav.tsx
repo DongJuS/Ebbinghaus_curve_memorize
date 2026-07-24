@@ -7,6 +7,7 @@ const LINKS = [
   { href: "/", label: "대시보드", icon: "🏠" },
   { href: "/decks", label: "덱 / 카드", icon: "🗂️" },
   { href: "/review", label: "오늘의 복습", icon: "🔁" },
+  { href: "/chat", label: "AI 채팅", icon: "💬" },
   { href: "/calendar", label: "캘린더", icon: "📅" },
   { href: "/mindmap", label: "마인드맵", icon: "🌳" },
   { href: "/generate", label: "AI 문제 생성", icon: "✨" },
